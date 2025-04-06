@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.data"
-    compileSdk = 35
+    namespace = "${AppVersions.APPLICATION_ID}.data"
+    compileSdk = AppVersions.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 26
-
+        minSdk = AppVersions.MIN_SDK
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -23,11 +22,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = AppVersions.javaVersion
+        targetCompatibility = AppVersions.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = AppVersions.JVM_TARGET
     }
 }
 
