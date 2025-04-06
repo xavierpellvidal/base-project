@@ -43,8 +43,12 @@ dependencies {
     implementation(libs.bundles.layer.features)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
+
     ksp(libs.com.google.dagger.hilt.android.compiler)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+
+    testImplementation(libs.bundles.test)
+    testImplementation(libs.bundles.test.compose)
+    androidTestImplementation(libs.bundles.test.android)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.bundles.test.android)
 }
