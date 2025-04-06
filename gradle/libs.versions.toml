@@ -15,6 +15,7 @@ hilt = "2.55"
 hiltCompose = "1.2.0"
 ksp = "2.0.21-1.0.27"
 kotlinxSerialization = "1.8.0"
+arrow = "2.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +39,8 @@ com-google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-and
 com-google-dagger-hilt-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompose" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigationCompose" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -54,10 +57,16 @@ layer-features = [
     "com-google-dagger-hilt-compose",
     "androidx-navigation-compose",
     "kotlinx-serialization-json",
+    "arrow-core",
+    "arrow-fx-coroutines",
 ]
 layer-domain = [
     "com-google-dagger-hilt-android",
+    "arrow-core",
+    "arrow-fx-coroutines",
 ]
 layer-data = [
     "com-google-dagger-hilt-android",
+    "arrow-core",
+    "arrow-fx-coroutines",
 ]
