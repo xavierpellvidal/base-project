@@ -36,5 +36,5 @@ dependencies {
     implementation(libs.material)
     implementation(libs.bundles.layer.data)
 
-    testImplementation(libs.bundles.test)
+    testImplementation(libs.bundles.test.unit)
 }

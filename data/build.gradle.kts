@@ -36,5 +36,5 @@ dependencies {
     implementation(libs.material)
     implementation(libs.bundles.layer.domain)
 
-    testImplementation(libs.bundles.test)
+    testImplementation(libs.bundles.test.unit)
 }

@@ -46,7 +46,7 @@ dependencies {
 
     ksp(libs.com.google.dagger.hilt.android.compiler)
 
-    testImplementation(libs.bundles.test)
+    testImplementation(libs.bundles.test.unit)
     testImplementation(libs.bundles.test.compose)
     androidTestImplementation(libs.bundles.test.android)
     androidTestImplementation(platform(libs.androidx.compose.bom))
