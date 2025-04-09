@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.example.baseproject.navigation.BaseProjectApp
-import com.example.baseproject.ui.theme.BaseProjectTheme
+import com.example.core.ui.theme.BaseProjectTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

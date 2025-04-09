@@ -1,22 +1,17 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.com.google.dagger.hilt.android)
     alias(libs.plugins.com.google.devtools.ksp)
+    alias(libs.plugins.com.google.dagger.hilt.android)
 }
 
 android {
-    namespace = AppVersions.APPLICATION_ID
+    namespace = "${AppVersions.APPLICATION_ID}.feature"
     compileSdk = AppVersions.COMPILE_SDK
 
     defaultConfig {
-        applicationId = AppVersions.APPLICATION_ID
         minSdk = AppVersions.MIN_SDK
-        targetSdk = AppVersions.COMPILE_SDK
-        versionCode = AppVersions.APP_VERSION_CODE
-        versionName = AppVersions.APP_VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,7 +20,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -43,17 +38,17 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material3)
     implementation(libs.bundles.layer.presentation)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
 
     ksp(libs.com.google.dagger.hilt.android.compiler)
 
-    implementation(project(":presentation:feature"))
-    implementation(project(":core:ui"))
+    testImplementation(libs.bundles.test)
+    testImplementation(libs.bundles.test.compose)
+    androidTestImplementation(libs.bundles.test.android)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.bundles.test.android)
 }
