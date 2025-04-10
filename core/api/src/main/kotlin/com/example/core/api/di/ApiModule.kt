@@ -1,6 +1,6 @@
 package com.example.core.api.di
 
-import com.example.core.api.service.ApiService
+import com.example.core.api.service.MovieApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,17 +11,17 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModule {
+object ApiModule {
     @Provides
     @Singleton
     fun provideRetrofit(): Retrofit =
         Retrofit
             .Builder()
-            .baseUrl(ApiService.BASE_URL)
+            .baseUrl(MovieApi.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
     @Provides
     @Singleton
-    fun provideMovieApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+    fun provideMovieApi(retrofit: Retrofit): MovieApi = retrofit.create(MovieApi::class.java)
 }

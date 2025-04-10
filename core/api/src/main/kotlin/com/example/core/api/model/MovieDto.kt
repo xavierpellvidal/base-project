@@ -2,7 +2,7 @@ package com.example.core.api.model
 
 import com.google.gson.annotations.SerializedName
 
-data class MovieEntity(
+data class MovieDto(
     @SerializedName("Title") val title: String,
     @SerializedName("Year") val year: String,
     @SerializedName("imdbID") val imdbId: String,

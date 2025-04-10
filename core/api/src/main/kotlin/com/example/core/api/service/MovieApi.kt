@@ -1,18 +1,18 @@
 package com.example.core.api.service
 
-import com.example.core.api.model.SearchResponseEntity
+import com.example.core.api.model.SearchResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ApiService {
+interface MovieApi {
     @GET
     fun searchMovies(
         @Query("s") query: String,
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int = PAGE_SIZE,
         @Query("apikey") apikey: String = API_KEY,
-    ): Response<SearchResponseEntity>
+    ): Response<SearchResponseDto>
 
     companion object {
         const val PAGE_SIZE = 10
