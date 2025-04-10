@@ -1,7 +1,7 @@
 package com.example.core.api.service
 
+import arrow.core.Either
 import com.example.core.api.model.SearchResponseDto
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -12,7 +12,7 @@ interface MovieApi {
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int = PAGE_SIZE,
         @Query("apikey") apikey: String = API_KEY,
-    ): Response<SearchResponseDto>
+    ): Either<Throwable, SearchResponseDto>
 
     companion object {
         const val PAGE_SIZE = 10

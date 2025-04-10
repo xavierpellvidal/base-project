@@ -17,7 +17,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -34,7 +34,10 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.bundles.layer.domain)
+    implementation(libs.bundles.layer.data)
+
+    implementation(project(":core:api"))
+    implementation(project(":core:database"))
 
     testImplementation(libs.bundles.test.unit)
 }

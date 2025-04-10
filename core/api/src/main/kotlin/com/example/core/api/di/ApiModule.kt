@@ -1,5 +1,6 @@
 package com.example.core.api.di
 
+import arrow.retrofit.adapter.either.EitherCallAdapterFactory
 import com.example.core.api.service.MovieApi
 import dagger.Module
 import dagger.Provides
@@ -19,6 +20,7 @@ object ApiModule {
             .Builder()
             .baseUrl(MovieApi.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(EitherCallAdapterFactory.create())
             .build()
 
     @Provides

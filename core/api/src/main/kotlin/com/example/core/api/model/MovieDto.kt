@@ -7,5 +7,5 @@ data class MovieDto(
     @SerializedName("Year") val year: String,
     @SerializedName("imdbID") val imdbId: String,
     @SerializedName("Type") val type: String,
-    @SerializedName("Poster") val poster: String
+    @SerializedName("Poster") val poster: String,
 )

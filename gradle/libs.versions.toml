@@ -45,6 +45,7 @@ com-google-dagger-hilt-compose = { module = "androidx.hilt:hilt-navigation-compo
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigationCompose" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-core-retrofit = { module = "io.arrow-kt:arrow-core-retrofit", version.ref = "arrow" }
 arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
 roborazzi = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi" }
 roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version.ref = "roborazzi" }
@@ -86,6 +87,7 @@ layer-data = [
     "com-google-dagger-hilt-android",
     "arrow-core",
     "arrow-fx-coroutines",
+    "arrow-core-retrofit",
     "retrofit",
     "retrofit-gson",
     "okhttp",
