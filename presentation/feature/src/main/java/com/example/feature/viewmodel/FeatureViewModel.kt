@@ -5,7 +5,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.domain.usecase.DeleteMovieUseCase
 import com.example.domain.usecase.SearchMoviesUseCase
 import com.example.feature.contract.event.FeatureEvent
+import com.example.feature.contract.state.FeatureUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,6 +19,9 @@ class FeatureViewModel
         private val deleteMovieUseCase: DeleteMovieUseCase,
         private val searchMoviesUseCase: SearchMoviesUseCase,
     ) : ViewModel() {
+        private val _uiState: MutableStateFlow<FeatureUiState> = MutableStateFlow(FeatureUiState())
+        val uiState: StateFlow<FeatureUiState> = _uiState
+
         fun handleEvent(event: FeatureEvent) {
             when (event) {
                 is FeatureEvent.OnSearchMovies -> {

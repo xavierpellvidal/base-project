@@ -1,18 +1,35 @@
 package com.example.feature.screen
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import com.example.feature.components.Greeting
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.core.ui.theme.BaseProjectTheme
+import com.example.feature.components.FeatureContent
+import com.example.feature.contract.event.FeatureEvent
+import com.example.feature.contract.state.FeatureUiState
+import com.example.feature.viewmodel.FeatureViewModel
 
 @Composable
-fun FeatureScreen() {
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-        Greeting(
-            name = "Android",
-            modifier = Modifier.padding(innerPadding),
+fun FeatureScreen(viewModel: FeatureViewModel = hiltViewModel()) {
+    val state by viewModel.uiState.collectAsStateWithLifecycle()
+
+    FeatureContent(
+        state = state,
+        onDeleteMovie = { viewModel.handleEvent(FeatureEvent.OnDeleteMovie(movieId = it)) },
+        onSearchMovies = { viewModel.handleEvent(FeatureEvent.OnSearchMovies(text = it)) },
+    )
+}
+
+@Preview
+@Composable
+private fun WakeupScreenUpdatingStatePreview() {
+    BaseProjectTheme {
+        FeatureContent(
+            state = FeatureUiState(),
+            onDeleteMovie = {},
+            onSearchMovies = {},
         )
     }
 }
