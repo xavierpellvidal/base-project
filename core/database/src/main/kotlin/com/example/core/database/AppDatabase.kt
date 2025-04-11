@@ -5,7 +5,11 @@ import androidx.room.RoomDatabase
 import com.example.core.database.dao.MovieDao
 import com.example.core.database.model.DeletedMovieEntity
 
-@Database(entities = [DeletedMovieEntity::class], version = AppDatabase.Companion.DB_VERSION, exportSchema = false)
+@Database(
+    entities = [DeletedMovieEntity::class],
+    version = AppDatabase.Companion.DB_VERSION,
+    exportSchema = false,
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
 
