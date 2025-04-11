@@ -8,9 +8,9 @@ internal class MoviesApiDataSource(
 ) : MoviesRemoteDataSource {
     override suspend fun searchMovies(
         query: String,
-        size: Int,
+        page: Int,
     ) = moviesApi
-        .searchMovies(query = query, page = size)
+        .searchMovies(query = query, page = page)
         .map { it.results }
         .mapLeft { RemoteErrors.NetworkException }
 }

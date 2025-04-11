@@ -5,7 +5,7 @@ import com.example.core.database.model.DeletedMovieEntity
 import com.example.data.errors.LocalErrors
 
 interface MoviesLocalDataSource {
-    fun getDeletedMovies(): Either<LocalErrors, List<DeletedMovieEntity>>
+    suspend fun getDeletedMovies(): Either<LocalErrors, List<DeletedMovieEntity>>
 
-    fun deleteMovie(id: DeletedMovieEntity): Either<LocalErrors, Unit>
+    suspend fun deleteMovie(id: DeletedMovieEntity): Either<LocalErrors, Unit>
 }

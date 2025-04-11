@@ -6,10 +6,10 @@ import com.example.domain.model.Movie
 interface MoviesRepository {
     suspend fun searchMovies(
         query: String,
-        size: Int,
+        page: Int,
     ): Either<Throwable, List<Movie>>
 
-    fun getDeletedMovies(): Either<Throwable, List<Int>>
+    suspend fun getDeletedMovies(): Either<Throwable, List<Int>>
 
-    fun deleteMovie(movieId: Int): Either<Throwable, Unit>
+    suspend fun deleteMovie(movieId: Int): Either<Throwable, Unit>
 }

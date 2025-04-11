@@ -8,13 +8,13 @@ import com.example.data.errors.LocalErrors
 internal class MoviesDatabaseDataSource(
     private val movieDao: MovieDao,
 ) : MoviesLocalDataSource {
-    override fun getDeletedMovies(): Either<LocalErrors, List<DeletedMovieEntity>> =
+    override suspend fun getDeletedMovies(): Either<LocalErrors, List<DeletedMovieEntity>> =
         Either
             .catch {
                 movieDao.getAllDeletedMovies()
             }.mapLeft { LocalErrors.DatabaseException }
 
-    override fun deleteMovie(id: DeletedMovieEntity) =
+    override suspend fun deleteMovie(id: DeletedMovieEntity) =
         Either
             .catch {
                 movieDao.insertDeletedMovie(id)

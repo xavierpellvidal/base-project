@@ -7,6 +7,6 @@ import com.example.data.errors.RemoteErrors
 interface MoviesRemoteDataSource {
     suspend fun searchMovies(
         query: String,
-        size: Int,
+        page: Int,
     ): Either<RemoteErrors, List<MovieDto>>
 }

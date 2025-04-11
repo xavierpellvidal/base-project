@@ -9,8 +9,8 @@ import com.example.core.database.model.DeletedMovieEntity
 @Dao
 interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertDeletedMovie(movie: DeletedMovieEntity)
+    suspend fun insertDeletedMovie(movie: DeletedMovieEntity)
 
     @Query("SELECT * FROM deletedmovieentity")
-    fun getAllDeletedMovies(): List<DeletedMovieEntity>
+    suspend fun getAllDeletedMovies(): List<DeletedMovieEntity>
 }
