@@ -1,40 +1,14 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    kotlin("jvm")
 }
 
-android {
-    namespace = "${AppVersions.APPLICATION_ID}.domain"
-    compileSdk = AppVersions.COMPILE_SDK
-
-    defaultConfig {
-        minSdk = AppVersions.MIN_SDK
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = AppVersions.javaVersion
-        targetCompatibility = AppVersions.javaVersion
-    }
-    kotlinOptions {
-        jvmTarget = AppVersions.JVM_TARGET
-    }
+java {
+    sourceCompatibility = AppVersions.javaVersion
+    targetCompatibility = AppVersions.javaVersion
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.bundles.layer.data)
+    implementation(libs.bundles.layer.domain)
 
     testImplementation(libs.bundles.test.unit)
 }
