@@ -3,7 +3,8 @@ package com.example.data.repository
 import com.example.core.database.model.DeletedMovieEntity
 import com.example.data.datasource.MoviesLocalDataSource
 import com.example.data.datasource.MoviesRemoteDataSource
-import com.example.data.mapper.toDomain
+import com.example.data.mapper.DeletedMovieMapper.toDomain
+import com.example.data.mapper.MovieDtoMapper.toDomain
 import com.example.domain.repository.MoviesRepository
 import javax.inject.Inject
 
