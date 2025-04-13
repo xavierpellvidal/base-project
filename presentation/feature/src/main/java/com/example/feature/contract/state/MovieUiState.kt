@@ -1,7 +1,7 @@
 package com.example.feature.contract.state
 
 data class MovieUiState(
-    val id: String,
+    val id: Int,
     val title: String,
     val year: String,
     val type: String,
@@ -11,8 +11,6 @@ data class MovieUiState(
     sealed interface ContentState {
         data object Idle : ContentState
 
-        data class Deleting(
-            val movieId: Int,
-        ) : ContentState
+        data object Deleting : ContentState
     }
 }
