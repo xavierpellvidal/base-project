@@ -23,6 +23,7 @@ mockitoKotlin = "5.3.1"
 ioMockk = "1.13.17"
 turbine = "1.1.0"
 room = "2.6.1"
+coil = "3.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,11 +41,10 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+com-google-dagger-hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
 com-google-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
-com-google-dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+com-google-dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 com-google-dagger-hilt-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompose" }
-com-google-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "hilt" }
-com-google-dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "hilt" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigationCompose" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
@@ -62,6 +62,7 @@ kotlin-mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.
 app-cash-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -81,10 +82,10 @@ layer-presentation = [
   "arrow-core",
   "arrow-fx-coroutines",
   "androidx-ui-tooling-preview",
+  "coil-compose"
 ]
 layer-domain = [
-  "com-google-dagger",
-  "com-google-dagger-compiler",
+  "com-google-dagger-hilt-core",
   "arrow-core",
   "arrow-fx-coroutines",
 ]

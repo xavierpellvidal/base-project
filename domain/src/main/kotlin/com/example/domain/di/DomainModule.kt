@@ -5,8 +5,11 @@ import com.example.domain.usecase.DeleteMovieUseCase
 import com.example.domain.usecase.SearchMoviesUseCase
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module
+@InstallIn(SingletonComponent::class)
 object DomainModule {
     @Provides
     fun provideSearchMoviesRoverUseCase(moviesRepository: MoviesRepository): SearchMoviesUseCase =

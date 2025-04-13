@@ -52,8 +52,12 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.bundles.layer.presentation)
 
-    ksp(libs.com.google.dagger.hilt.android.compiler)
+    ksp(libs.com.google.dagger.hilt.compiler)
 
+    implementation(project(":data"))
+    implementation(project(":domain"))
     implementation(project(":presentation:feature"))
     implementation(project(":core:ui"))
+    implementation(project(":core:api"))
+    implementation(project(":core:database"))
 }

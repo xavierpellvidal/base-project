@@ -1,20 +1,15 @@
-package com.example.data.mapper
+package com.example.feature.mapper
 
-import com.example.core.api.model.MovieDto
-import com.example.core.database.model.DeletedMovieEntity
 import com.example.domain.model.Movie
+import com.example.feature.contract.state.MovieUiState
 
-fun List<MovieDto>.toDomain() = map { it.toDomain() }
+fun List<Movie>.toUiState() = map { it.toUiState() }
 
-fun MovieDto.toDomain() =
-    Movie(
-        id = imdbId.toInt(),
+fun Movie.toUiState() =
+    MovieUiState(
+        id = id,
         title = title,
         year = year,
         type = type,
         poster = poster,
     )
-
-fun List<DeletedMovieEntity>.toDomain() = map { it.toDomain() }
-
-fun DeletedMovieEntity.toDomain() = id

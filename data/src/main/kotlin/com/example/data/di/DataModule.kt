@@ -8,8 +8,8 @@ import com.example.data.datasource.MoviesLocalDataSource
 import com.example.data.datasource.MoviesRemoteDataSource
 import com.example.data.repository.MoviesRepositoryImpl
 import com.example.domain.repository.MoviesRepository
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -17,15 +17,15 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DataModule {
-    @Binds
+    @Provides
     @Singleton
     fun provideMoviesLocalDataSource(movieDao: MovieDao): MoviesLocalDataSource = MoviesDatabaseDataSource(movieDao)
 
-    @Binds
+    @Provides
     @Singleton
     fun provideMoviesRemoteDataSource(movieApi: MovieApi): MoviesRemoteDataSource = MoviesApiDataSource(movieApi)
 
-    @Binds
+    @Provides
     fun provideMoviesRepository(
         moviesRemoteDataSource: MoviesRemoteDataSource,
         moviesLocalDataSource: MoviesLocalDataSource,

@@ -44,7 +44,7 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
 
-    ksp(libs.com.google.dagger.hilt.android.compiler)
+    ksp(libs.com.google.dagger.hilt.compiler)
 
     testImplementation(libs.bundles.test.unit)
     testImplementation(libs.bundles.test.compose)

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
+    alias(libs.plugins.com.google.dagger.hilt.android)
 }
 
 android {
@@ -18,7 +19,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -37,6 +38,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.bundles.layer.data)
 
+    ksp(libs.com.google.dagger.hilt.compiler)
     ksp(libs.room.compiler)
 
     testImplementation(libs.bundles.test.unit)
