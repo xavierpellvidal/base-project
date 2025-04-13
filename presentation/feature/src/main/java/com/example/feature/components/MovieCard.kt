@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.example.baseproject.feature.R
+import com.example.core.ui.theme.BaseProjectTheme
 import com.example.feature.contract.state.MovieUiState
 
 @Composable
@@ -126,7 +127,7 @@ internal fun MovieCard(
 @PreviewLightDark
 @Composable
 private fun MovieCardPreview() {
-    MaterialTheme {
+    BaseProjectTheme {
         MovieCard(
             movie =
                 MovieUiState(
