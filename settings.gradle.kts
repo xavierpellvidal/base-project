@@ -21,10 +21,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "BaseProject"
 include(":app")
-include(":di")
-include(":core:presentation")
 include(":core:api")
 include(":core:database")
+include(":core:presentation")
 include(":data")
 include(":domain")
 include(":presentation:feature")

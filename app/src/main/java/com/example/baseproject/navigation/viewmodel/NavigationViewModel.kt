@@ -11,5 +11,6 @@ class NavigationViewModel
     constructor(
         private val featureNavigation: Set<@JvmSuppressWildcards FeatureNavigation>,
     ) : ViewModel() {
-        val subNavigation = featureNavigation
+        val subNavigation: Set<FeatureNavigation>
+            get() = featureNavigation
     }
