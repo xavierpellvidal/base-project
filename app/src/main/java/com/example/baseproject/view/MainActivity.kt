@@ -1,11 +1,11 @@
-package com.example.baseproject.application
+package com.example.baseproject.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.baseproject.navigation.BaseProjectApp
-import com.example.core.ui.theme.BaseProjectTheme
+import com.example.baseproject.navigation.BaseProjectApplication
+import com.example.core.presentation.ui.theme.BaseProjectTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BaseProjectTheme {
-                BaseProjectApp()
+                BaseProjectApplication()
             }
         }
     }

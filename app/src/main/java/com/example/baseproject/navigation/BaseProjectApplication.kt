@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun BaseProjectApp() {
+fun BaseProjectApplication() {
     val navController = rememberNavController()
 
     BaseProjectApplicationNavHost(

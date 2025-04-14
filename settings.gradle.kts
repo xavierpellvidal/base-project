@@ -22,7 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "BaseProject"
 include(":app")
 include(":di")
-include(":core:ui")
+include(":core:presentation")
 include(":core:api")
 include(":core:database")
 include(":data")

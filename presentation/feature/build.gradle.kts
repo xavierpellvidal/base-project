@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.com.google.dagger.hilt.android)
 }
@@ -46,7 +47,7 @@ dependencies {
 
     ksp(libs.com.google.dagger.hilt.compiler)
 
-    implementation(project(":core:ui"))
+    implementation(project(":core:presentation"))
     implementation(project(":domain"))
 
     debugImplementation(libs.androidx.ui.tooling)

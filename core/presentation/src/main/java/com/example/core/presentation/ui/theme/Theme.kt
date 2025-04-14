@@ -1,4 +1,4 @@
-package com.example.core.ui.theme
+package com.example.core.presentation.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
