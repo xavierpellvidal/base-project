@@ -38,7 +38,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material3)
     implementation(libs.bundles.layer.presentation)
@@ -49,7 +48,4 @@ dependencies {
 
     testImplementation(libs.bundles.test.unit)
     testImplementation(libs.bundles.test.compose)
-    androidTestImplementation(libs.bundles.test.android)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.bundles.test.android)
 }

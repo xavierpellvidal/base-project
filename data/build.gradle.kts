@@ -33,10 +33,8 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     implementation(libs.bundles.layer.data)
+    implementation(libs.arrow.core.retrofit)
 
     ksp(libs.com.google.dagger.hilt.compiler)
 
