@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.com.google.dagger.hilt.android)
 }
@@ -37,18 +38,17 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material3)
-    implementation(libs.bundles.layer.presentation)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
+    implementation(libs.bundles.layer.presentation)
+    implementation(libs.coil.compose)
 
-    ksp(libs.com.google.dagger.hilt.android.compiler)
+    ksp(libs.com.google.dagger.hilt.compiler)
+
+    implementation(project(":core:presentation"))
+    implementation(project(":domain"))
 
     testImplementation(libs.bundles.test.unit)
     testImplementation(libs.bundles.test.compose)
-    androidTestImplementation(libs.bundles.test.android)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.bundles.test.android)
 }

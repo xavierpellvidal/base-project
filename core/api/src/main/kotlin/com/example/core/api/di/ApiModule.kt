@@ -1,0 +1,29 @@
+package com.example.core.api.di
+
+import arrow.retrofit.adapter.either.EitherCallAdapterFactory
+import com.example.core.api.service.MovieApi
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+object ApiModule {
+    @Provides
+    @Singleton
+    fun provideRetrofit(): Retrofit =
+        Retrofit
+            .Builder()
+            .baseUrl(MovieApi.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(EitherCallAdapterFactory.create())
+            .build()
+
+    @Provides
+    @Singleton
+    fun provideMovieApi(retrofit: Retrofit): MovieApi = retrofit.create(MovieApi::class.java)
+}
